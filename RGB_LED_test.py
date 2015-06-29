@@ -19,6 +19,9 @@ if __name__ == "__main__":
 			g = (state>>1)%2
 			b = (state>>2)%2
 			print r, g, b
+			GPIO.output(pins['r'], r)
+			GPIO.output(pins['g'], g)
+			GPIO.output(pins['b'], b)
 			
 			if state is 8:
 				state = 0
