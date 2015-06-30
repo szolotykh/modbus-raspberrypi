@@ -1,10 +1,11 @@
-import RPi.GPIO as GPIO
+import sys, traceback
 import time
+import RPi.GPIO as GPIO
 
 pins = {'r' : 18, 'g': 23, 'b' : 24}
+state = 0
 
 if __name__ == "__main__":
-	state = 0
 	
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setwarnings(False)
