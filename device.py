@@ -191,14 +191,15 @@ if __name__ == "__main__":
 	
 	thServer.start()
 	time.sleep(1)
+	
 	# Start clients
 	thLED.start()
 	time.sleep(1)
 	thTemperature.start()
 	time.sleep(1)
 	thRGBLED.start()
-	#time.sleep(1)
-	#thColorSensor.start()
+	time.sleep(1)
+	thButton.start()
 
 	# Wait for keyboard interrupt
 	try:
@@ -216,7 +217,7 @@ if __name__ == "__main__":
 
 	# Wait until all clients stop
 	# or thColorSensor.isAlive()
-	while thLED.isAlive() or thTemperature.isAlive() or thRGBLED.isAlive():
+	while thLED.isAlive() or thTemperature.isAlive() or thRGBLED.isAlive() or thButton.isAlive():
 		time.sleep(0.01)
 	
 	# Shutdown server

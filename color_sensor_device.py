@@ -38,6 +38,10 @@ if __name__ == "__main__":
 				green = data[5] << 8 | data[4]
 				blue = data[7] << 8 | data[6]
 				print 'Color Sensor. C:', clear, 'R:', red, 'G:', green, 'B:', blue
+				client.write_register(10, clear)
+				client.write_register(11, red)
+				client.write_register(12, green)
+				client.write_register(13, blue)
 				time.sleep(update_interval)
 		except KeyboardInterrupt:
 			print 'Stopping program'
